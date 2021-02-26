@@ -272,9 +272,6 @@ class ReplicateAdapter implements AdapterInterface
      */
     protected function ensureSeekable($resource, $path)
     {
-        if (Util::isSeekableStream($resource) && rewind($resource)) {
-            return $resource;
-        }
 
         $stream = $this->source->readStream($path);
 
